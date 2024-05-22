@@ -40,6 +40,7 @@ submit.addEventListener('click', ()=>{
 
     else if(userGuess == randomNumber){
         resultMessage.textContent = `Congratulations! You guessed the number in ${attempts} attempts.`;
+        submit.disabled = true;
         reset.disabled = false; // reset false
     }
 
