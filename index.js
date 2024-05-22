@@ -17,7 +17,14 @@ numberInput.addEventListener('input', () => {
     submit.disabled = numberInput.value === '';
 });
 
+// enter button to submit
 
+numberInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        event.preventDefault(); // Prevent default behavior of the "Enter" key
+        submit.click(); // Trigger click event on the submit button
+    }
+});
 
 // button function to guess the number
 
