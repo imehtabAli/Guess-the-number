@@ -27,20 +27,23 @@ submit.addEventListener('click', ()=>{
     guesses.textContent += `${userGuess} `;
 
     if (userGuess < 0 || userGuess > 100) {
+        numberInput.value = '';
         resultMessage.textContent = "Please enter a number between 0 and 100.";
     }
 
     else if(userGuess < randomNumber){
+        numberInput.value = '';
         resultMessage.textContent = "Too Low!";
     }
 
     else if(userGuess > randomNumber){
+        numberInput.value = '';
         resultMessage.textContent = "Too High!";
     }
 
     else if(userGuess == randomNumber){
         resultMessage.textContent = `Congratulations! You guessed the number in ${attempts} attempts.`;
-        submit.disabled = true;
+        submit.disabled = true; // when guessed, submit button will not work anymore
         reset.disabled = false; // reset false
     }
 
